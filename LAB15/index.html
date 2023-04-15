@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    
+    #container{
+     margin-right: auto;
+     margin-left: auto;
+     border: 2px solid black;
+     border-radius:10px;
+     width: 500px;
+     height: 550px;
+     padding:20px;
+     background-color: #ffff66;
+     }
+     label[for=boxtitle]{
+     font-size:20px;
+     font-weight: bold
+     }
+     label[for=list]{
+     font-size:20px;
+     font-weight: bold
+     }
+     input[type=text], select {
+     font-size:20px;
+     font-weight: bold;
+     width: 100%;
+     padding : 10px;
+     margin: 8px 0;
+     border: 1px solid black;
+     border-radius: 4px;
+     box-sizing: border-box;
+   }
+
+    input[type=submit] {
+    font-size:20px;
+    font-weight: bold;
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  </style>
+</head>
+
+<body>
+  <h1 style="font-size: 30px; text-align:center;">
+    ONEIROS REGISTRATION FORM
+  </h1>
+  <div id="container">
+    <form method="post" action="insert.php">
+    <label for="boxtitle">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your Name...(Ex. Sameer)">
+
+    <label for="boxtitle">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your Last Name...(Ex. Chauhan)">
+
+    <label for="boxtitle">Registration Number</label>
+    <input type="text" id="lname" name="Regno" placeholder="Your Reg. Number...(Ex. 219311225)">
+      
+    <label for="boxtitle">Phone Number</label>
+    <input type="text" id="lname" name="phno" placeholder="Your Phone Number">
+     
+    <label for="list">Branch</label>
+    <select id="list" name="country">
+      <option value="iot">Computer Science (IOT&IS)</option>
+      <option value="aiml">Computer Science (AI/ML)</option>
+      <option value="ds">Data Science</option>
+      <option value="ds">Civil Engineering</option>
+      <option value="ds">Mechanical Engineering</option>
+      <option value="ds">Chemical Engineering</option>
+    </select>
+      
+      <label for="list">Event Name</label>
+      <select id="list" name="country">
+       <option value="ev1">Ideathon 2.0</option>
+      <option value="ev2">ACM Mini Hacks 6.0</option>
+      <option value="ev3">Codechef's Coders Cook</option>
+      <option value="ev4">Saarang - The Epic</option>
+    </select>
+  
+    <input type="submit" value="Submit">
+  </form>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function cal(){
+            var i, num;
+            num= Number(document.getElementById("num").value);
+            for(i=1; i<=10; i++)
+            {
+                alert(num*i);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div style="border:2px solid; border-radius: 5px; width: 600px; height: 250px; margin-left: auto; margin-right:auto; text-align:center; background-color:antiquewhite;">
+        <div style="border:2px solid; border-radius: 5px; width:400px; margin:auto; margin-top:20px; background-color:aliceblue;">
+            <h1 style="font-size:15px;">LAB 10 (WEB Technologies)<br>Program (C)<br>By - Sameer</h1>
+        </div>
+        <h1 style="padding: 10px;">Program to display Table of a Number</h1>
+        <input id="num" style="font-size:25px;" placeholder="Enter the number">
+        <button style="font-size:25px;" onclick="cal()">Print Table</button>
+    </div>
+</body>
+</html>

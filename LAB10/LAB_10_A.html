@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>LAB 10 (WEB Technologies)<br>Program (A)</title>
+</head>
+
+<body>
+  <div style="border:2px solid; border-radius: 5px; width: 600px; height: 380px; margin-left: auto; margin-right:auto; text-align:center; background-color:antiquewhite;">
+    <div style="border:2px solid; border-radius: 5px; width:400px; margin:auto; margin-top:20px; background-color:aliceblue;">
+      <h1 style="font-size:15px;">LAB 10 (WEB Technologies)<br>Program (A)<br>By - Sameer</h1>
+    </div>
+    <h1 style="padding: 10px;">Program to display Date on click of Display Date Button</h1>
+    <button type="button" style="font-size:25px;" onclick="showDate()">Display Date Button</button>
+    <p style="font-size:25px; padding:10px;" id="date_display">Date Will Be Displayed Here</p>
+
+    <script>
+      function showDate() {
+        const currentDate = new Date();
+        document.getElementById('date_display').innerHTML = currentDate;
+        alert("Today's date is: " + currentDate);
+      }
+    </script>
+
+  </div>
+</body>
+
+</html>
