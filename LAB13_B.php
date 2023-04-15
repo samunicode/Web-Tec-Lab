@@ -25,6 +25,10 @@
             {
                 echo $copy." is PALINDROME";
             }
+            else
+            {
+                echo $copy." is NOT PALINDROME";
+            }
         }
     ?>
 </body>
