@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #container {
+            margin-right: auto;
+            margin-left: auto;
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 300px;
+            height: auto;
+            padding: 20px;
+            background-color: #ffff66;
+            text-align: center;  
+        }
+
+        label[for=boxtitle] {
+            font-size: 20px;
+            font-weight: bold
+        }
+
+        input[type=text],
+        select {
+            font-size: 20px;
+            font-weight: bold;
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid black;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+
+
+        input[type=submit],
+        input[type=button] {
+            font-size: 20px;
+            font-weight: bold;
+            width: 24%;
+            background-color: #000000;
+            color: white;
+            padding: 10px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit] {
+            font-size: 20px;
+            font-weight: bold;
+            width: 100%;
+            background-color: #000000;
+            color: white;
+            padding: 10px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="font-size: 30px; text-align:center;">
+        SAMEER'S CALCULATOR
+    </h1>
+    <div id="container">
+        <form>
+            <label for="boxtitle">INPUT</label>
+            <input type="text" id="in" name="input" value="" placeholder="0">
+            <label for="boxtitle">OUTPUT</label>
+            <input type="text" id="out" name="output" value="" placeholder="0">
+
+            <input type="button" name="sum" value="+" onclick="operator('+')">
+            <input type="button" name="minus" value="-" onclick="operator('-')">
+            <input type="button" name="mult" value="x" onclick="operator('*')">
+            <input type="button" name="divs" value="/" onclick="operator('/')">
+
+            <input type="button" value="0" onclick="operand('0')">
+            <input type="button" value="1" onclick="operand('1')">
+            <input type="button" value="2" onclick="operand('2')">
+            <input type="button" value="3" onclick="operand('3')">
+            <input type="button" value="4" onclick="operand('4')">
+            <input type="button" value="5" onclick="operand('5')">
+            <input type="button" value="6" onclick="operand('6')">
+            <input type="button" value="7" onclick="operand('7')">
+            <input type="button" value="8" onclick="operand('8')">
+            <input type="button" value="9" onclick="operand('9')">
+
+            <input type="button" value="(" onclick="operator('(')">
+            <input type="button" value=")" onclick="operator(')')">
+
+            <input type="submit" value="Calculate" id="calculate" onclick="answer(event)">
+            <input type="submit" value="Clear" id="clear" onclick="clear(event2)">
+
+        </form>
+    </div>
+    <script>
+        var op, num;
+        function operand(num) {
+            if (document.getElementById("in")) {
+                if (num == '0') {
+                    document.getElementById("in").value += '0';
+                }
+                else if (num == '1') {
+                    document.getElementById("in").value += '1';
+                }
+                else if (num == '2') {
+                    document.getElementById("in").value += '2';
+                }
+                else if (num == '3') {
+                    document.getElementById("in").value += '3';
+                }
+                else if (num == '4') {
+                    document.getElementById("in").value += '4';
+                }
+                else if (num == '5') {
+                    document.getElementById("in").value += '5';
+                }
+                else if (num == '6') {
+                    document.getElementById("in").value += '6';
+                }
+                else if (num == '7') {
+                    document.getElementById("in").value += '7';
+                }
+                else if (num == '8') {
+                    document.getElementById("in").value += '8';
+                }
+                else if (num == '9') {
+                    document.getElementById("in").value += '9';
+                }
+            }
+        }
+        function operator(op) {
+            if (document.getElementById("in")) {
+                if (op == '+') {
+                    document.getElementById("in").value += '+';
+                }
+                else if (op == '-') {
+                    document.getElementById("in").value += '-';
+                }
+                else if (op == '*') {
+                    document.getElementById("in").value += '*';
+                }
+                else if (op == '/') {
+                    document.getElementById("in").value += '/';
+                }
+                else if (op == '(') {
+                    document.getElementById("in").value += '(';
+                }
+                else if (op == ')') {
+                    document.getElementById("in").value += ')';
+                }
+            }
+        }
+        function answer(event) {
+            event.preventDefault();
+            var val3 = eval(document.getElementById('in').value);
+            document.getElementById('out').value = val3;
+        }
+        function clear(event2) {
+            event2.preventDefault();
+            document.getElementById('out').value = undefined;
+        }
+    </script>
+</body>
+
+</html>

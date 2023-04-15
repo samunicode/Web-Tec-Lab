@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<style>
+        h1 {
+            display: flex;
+            justify-content: center;
+        }
+		table {
+			margin: 0 auto;
+            border: 2px solid;
+            border-radius: 5px;
+		}
+		td {
+			padding: 10px;
+            border: 2px solid;
+            border-radius: 5px;
+		}
+		input[type="submit"] {
+			margin-top: 10px;
+		}
+	</style>
+	<script>
+		function validateForm() {
+			var userID = document.forms["registrationForm"]["userID"].value;
+			var password = document.forms["registrationForm"]["password"].value;
+			var email = document.forms["registrationForm"]["email"].value;
+	
+			var userIDRegex = /^[a-zA-Z][a-zA-Z .]{2,29}$/;
+			if (!userIDRegex.test(userID)) {
+				alert("User ID should start with alphabet and can contain alphabets, space and dot with length 3-30 characters.");
+				return false;
+			}
+
+			var passwordRegex = /^[0-9][!@#$&][a-zA-Z0-9!@#$&]{6,18}$/;
+			if (!passwordRegex.test(password)) {
+				alert("Password should start with a digit followed by a special symbol and can contain alphabets, digits and special symbols with length 8-20 characters.");
+				return false;
+			}
+            
+			var emailRegex = /^[a-zA-Z._]{3,}@[a-zA-Z]{3,}\.[a-zA-Z]{2,}$/;
+			if (!emailRegex.test(email)) {
+				alert("Email ID should contain username with minimum length 3 containing alphabets, underscore and dot followed by '@' symbol, organization name with minimum length 3 containing alphabets and domain name e.g. .com or .co.in");
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Registration Form</h1>
+	<table>
+		<form name="registrationForm" onsubmit="return validateForm()">
+			<tr>
+				<td>User ID:</td>
+				<td><input type="text" name="userID"></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" name="password"></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="text" name="email"></td>
+			</tr>
+			<tr>
+				<th colspan="2"><input type="submit" value="Register"></th>
+			</tr>
+		</form>
+	</table>
+</body>
+</html>

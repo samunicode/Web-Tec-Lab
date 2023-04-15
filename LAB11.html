@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number to Words Converter</title>
+    <script>
+        function convertToWords() {
+            var num = document.getElementById("num").value;
+            var words = ["ZERO", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE",
+"TEN", "ELEVEN", "TWELVE", "THIRTEEN", "FOURTEEN", "FIFTEEN", "SIXTEEN",
+"SEVENTEEN", "EIGHTEEN", "NINETEEN"];
+            var tens = ["", "", "TWEENTY", "THIRTY", "FORTY", "FIFTY", "SIXTY", "SEVENTY", "EIGHTY", "NINETY"];
+            var hundred = "HUNDRED";
+            var output = "";
+            
+            // Check if the input is valid
+            if (num.length == 0 || isNaN(num) || num < 0 || num >= 1000) {
+                output = "Invalid input. Please enter a number between 0 and 999.";
+            } else {
+                var numInt = parseInt(num);
+                if (numInt >= 0 && numInt <= 19) {
+                    output = words[numInt];
+                } else if (numInt >= 20 && numInt <= 99) {
+                    var onesDigit = numInt % 10;
+                    var tensDigit = Math.floor(numInt / 10);
+                    if (onesDigit == 0) {
+                        output = tens[tensDigit];
+                    } else {
+                        output = tens[tensDigit] + " " + words[onesDigit];
+                    }
+                } else if (numInt >= 100 && numInt <= 999) {
+                    var onesDigit = numInt % 10;
+                    var tensDigit = Math.floor((numInt % 100) / 10);
+                    var hundredsDigit = Math.floor(numInt / 100);
+                    if (tensDigit == 0 && onesDigit == 0) {
+                        output = words[hundredsDigit] + " " + hundred;
+                    } else if (tensDigit == 0 && onesDigit != 0) {
+                        output = words[hundredsDigit] + " " + hundred + " and " + words[onesDigit];
+                    } else if (tensDigit != 0 && onesDigit == 0) {
+                        output = words[hundredsDigit] + " " + hundred + " and " + tens[tensDigit];
+                    } else {
+                        output = words[hundredsDigit] + " " + hundred + " " + tens[tensDigit] + " " + words[onesDigit];
+                    }
+                }
+            }
+            
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+</head>
+<body>
+    <h1>Number to Words Converter</h1>
+    <label for="num">Enter a number between 0 and 999:</label>
+    <input type="text" id="num" name="num" maxlength="3">
+    <button onclick="convertToWords()">Convert</button>
+    <div id="output"></div>
+</body>
+</html>
