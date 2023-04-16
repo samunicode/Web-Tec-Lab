@@ -13,12 +13,12 @@
 <body>
 	<h1>Select a Country to See Its Capital</h1>
 	<select id="countrySelect" onchange="displayCapital()">
-        <option value="usa">India</option>
-		<option value="usa">Bangladesh</option>
-		<option value="uk">Pakistan</option>
+        <option value="india">India</option>
+		<option value="bangla">Bangladesh</option>
+		<option value="pak">Pakistan</option>
 		<option value="france">Ukraine</option>
-		<option value="germany">Russia</option>
-		<option value="japan">USA</option>
+		<option value="russia">Russia</option>
+		<option value="usa">USA</option>
 	</select>
 	<p>The capital of <span id="countryName"></span> is <span id="capital"></span>.</p>
 
@@ -29,23 +29,23 @@
 			var countryName = select.options[select.selectedIndex].text;
 			var capital = "";
 			switch(selectedOption) {
-				case "usa":
+				case "india":
 					capital = "New Delhi";
 					break;
-				case "uk":
+				case "bangla":
 					capital = "Dhaka";
 					break;
-				case "france":
+				case "pak":
 					capital = "Islamabad";
 					break;
-				case "germany":
+				case "france":
 					capital = "Kyiv";
 					break;
-				case "japan":
+				case "russia":
 					capital = "Moscow";
 					break;
 				default:
-					capital = "Washimnton DC";
+					capital = "Washington DC";
 			}
 			document.getElementById("countryName").textContent = countryName;
 			document.getElementById("capital").textContent = capital;
